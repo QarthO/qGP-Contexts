@@ -30,7 +30,15 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
+          <version>3.5.1</version>
+          <configuration>
+              <relocations>
+                  <relocation>
+                      <pattern>org.bstats</pattern>
+                      <shadedPattern>gg.quartzdev.metrics</shadedPattern>
+                  </relocation>
+              </relocations>
+          </configuration>
         <executions>
           <execution>
             <phase>package</phase>
@@ -79,6 +87,13 @@
           <artifactId>GriefPrevention</artifactId>
           <version>16.18.4</version>
           <scope>provided</scope>
+      </dependency>
+<!--      bStats API -->
+      <dependency>
+          <groupId>org.bstats</groupId>
+          <artifactId>bstats-bukkit</artifactId>
+          <version>3.0.2</version>
+          <scope>compile</scope>
       </dependency>
       <!-- Paper API -->
       <dependency>

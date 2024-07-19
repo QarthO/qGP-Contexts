@@ -5,6 +5,7 @@ import net.kyori.adventure.text.Component;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
 import net.luckperms.api.context.ContextManager;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +20,11 @@ public final class QGPContexts extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+//        bStats.org Metrics
+        int pluginId = 22704;
+        Metrics metrics = new Metrics(this, pluginId);
+
         LuckPerms luckPerms = getServer().getServicesManager().load(LuckPerms.class);
         if (luckPerms == null)
         {
