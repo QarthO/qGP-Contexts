@@ -29,14 +29,27 @@ Dependencies:
 |-------------------------------------|------------------------------------------|---------------|
 | ``griefprevention:claim-id``        | id of the claim the player is in         | ``32``        |
 | ``griefprevention:in-claim``        | if the player is in a claim              | ``true``      |
+| ``griefprevention:is-admin-claim``  | if the claim is an admin claim           | ``false``     |
 | ``griefprevention:is-owner``        | if the player is the owner of the claim  | ``false``     |
 | ``griefprevention:trust-access``    | if the player has access trust level*    | ``true``      |
 | ``griefprevention:trust-build``     | if the player has build trust level*     | ``true``      |
 | ``griefprevention:trust-edit``      | if the player has edit trust level*      | ``false``     |
-| ``griefprevention:trust-inventory`` | if the player has inventory trust level* | ``false``     |
+| ``griefprevention:trust-inventory`` | if the player has inventory trust level* | ``true``      |
 | ``griefprevention:trust-manage``    | if the player has manage trust level*    | ``false``     |
 
-*Note: Claim owners default to ``true`` for all trust level contexts*
+**Note: Claim owners default to ``true`` for all trust level contexts*
+
+---
+
+# Example Permissions:
+
+Want to prevent players from setting homes in claims they don't have atleast build trust in? You can do the following
+
+Setting ``essentials.sethome`` to ``false`` with the following contexts:
+- ``griefprevention:in-claim`` = ``true``
+- ``griefprevention:trust-build`` = ``false``
+
+![GP Contexts Permissions][perms-example-img]
 
 ---
 
@@ -48,6 +61,7 @@ This plugin uses [bStats][bstats-url]. You can opt-out in the bStats config
 
 [luckperms-url]: https://luckperms.net/
 [griefprevention-url]: https://modrinth.com/plugin/griefprevention
+[perms-example-img]: https://github.com/QarthO/qGP-Contexts/blob/main/img/gpcontexts%20perms.png?raw=true
 
 [modrinth-shield]: https://img.shields.io/badge/Download-00AF5C?logo=modrinth&logoColor=white&style=for-the-badge
 
