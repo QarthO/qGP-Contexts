@@ -39,17 +39,18 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
 
         boolean isOwner = false;
 
-//        If in admin claim
+//        if in admin claim
         if(claim.isAdminClaim())
         {
             contextConsumer.accept(IS_ADMIN_KEY, "true");
 
 //            admin claims don't have owners
             contextConsumer.accept(IS_OWNER_KEY, "false");
-        } else
+        } 
+        else
         {
             contextConsumer.accept(IS_ADMIN_KEY, "false");
-//        if owner of the claim
+//            if owner of the claim
             if(claim.getOwner().isPresent())
             {
                 isOwner = claim.getOwner().get().equals(player.getUniqueId());
@@ -58,7 +59,8 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
         }
 
 //        sets false for all trust levels
-        for(TrustLevel trustLevel : claimsAPI.getTrustLevels()) {
+        for(TrustLevel trustLevel : claimsAPI.getTrustLevels()) 
+        {
             contextConsumer.accept(TRUST_LEVEL_PREFIX + trustLevel.getDisplayName().toLowerCase(), "" + isOwner);
         }
 
