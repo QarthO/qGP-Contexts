@@ -27,7 +27,7 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
         OnlineUser onlineUser = claimsAPI.getOnlineUser(player.getUniqueId());
         Optional<net.william278.huskclaims.claim.Claim> currentClaim = claimsAPI.getClaimAt(onlineUser);
 
-//        If they're in a claim
+//        If they're not in a claim
         if(!currentClaim.isPresent())
         {
             contextConsumer.accept(IN_CLAIM_KEY, "false");
