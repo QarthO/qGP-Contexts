@@ -22,16 +22,16 @@ Dependencies:
 - GriefPrevention
 
 
-| Context | Description |
-| --- | --- |
-| ``griefprevention:claim-id`` | The claim ID of the claim the player is in |
-| ``griefprevention:in-claim`` | Whether the player is in a claim |
-| ``griefprevention:is-owner`` | Whether the player is the owner of the claim |
-| ``griefprevention:trust-access`` | Whether the player has access trust level |
-| ``griefprevention:trust-build`` | Whether the player has build trust level |
-| ``griefprevention:trust-edit`` | Whether the player has edit trust level |
-| ``griefprevention:trust-inventory`` | Whether the player has inventory trust level |
-| ``griefprevention:trust-manage`` | Whether the player has manage trust level |
+| Context   | Description                                  | Example Value |
+| --------- | -------------------------------------------- |---------------|
+| ``griefprevention:claim-id`` | The claim ID of the claim the player is in | ``32``        |
+| ``griefprevention:in-claim`` | Whether the player is in a claim | ``true``      |
+| ``griefprevention:is-owner`` | Whether the player is the owner of the claim | ``false``     |
+| ``griefprevention:trust-access`` | Whether the player has access trust level | ``true``      |
+| ``griefprevention:trust-build`` | Whether the player has build trust level | ``true``      |
+| ``griefprevention:trust-edit`` | Whether the player has edit trust level | ``false``     |
+| ``griefprevention:trust-inventory`` | Whether the player has inventory trust level | ``false``     |
+| ``griefprevention:trust-manage`` | Whether the player has manage trust level | ``false``     |
 
 ---
 
