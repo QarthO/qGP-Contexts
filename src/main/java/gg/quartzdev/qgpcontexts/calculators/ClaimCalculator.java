@@ -14,7 +14,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class ClaimCalculator implements ContextCalculator<Player>
 {
-    private static final String KEY = "griefprevention:claim-id";
+    private static final String CLAIM_ID_KEY = "griefprevention:claim-id";
     private static final String IN_CLAIM_KEY = "griefprevention:in-claim";
     private static final String IS_OWNER_KEY = "griefprevention:is-owner";
     private static final String TRUST_ACCESS_KEY = "griefprevention:trust-access";
@@ -40,7 +40,7 @@ public class ClaimCalculator implements ContextCalculator<Player>
         contextConsumer.accept(IN_CLAIM_KEY, "true");
 
 //        claim id of the claim
-        contextConsumer.accept(KEY, "" + currentClaim.getID());
+        contextConsumer.accept(CLAIM_ID_KEY, "" + currentClaim.getID());
 
 //        if the player is the owner of the claim
         contextConsumer.accept(IS_OWNER_KEY, "" + currentClaim.getOwnerID().equals(player.getUniqueId()));
@@ -74,7 +74,7 @@ public class ClaimCalculator implements ContextCalculator<Player>
 
         for(Claim claim : dataStore.getClaims())
         {
-            builder.add(KEY, "" + claim.getID());
+            builder.add(CLAIM_ID_KEY, "" + claim.getID());
         }
         return builder.build();
     }
