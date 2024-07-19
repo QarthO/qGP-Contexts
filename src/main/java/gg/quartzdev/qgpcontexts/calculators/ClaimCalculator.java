@@ -38,7 +38,6 @@ public class ClaimCalculator implements ContextCalculator<Player>
             return;
         }
         contextConsumer.accept(IN_CLAIM_KEY, "true");
-        currentClaim.permi
 
 //        claim id of the claim
         contextConsumer.accept(KEY, "" + currentClaim.getID());
