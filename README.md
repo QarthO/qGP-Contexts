@@ -39,7 +39,7 @@ Requirements:
 | ``griefprevention:trust-inventory`` | if the player has inventory trust level* | ``true``      |
 | ``griefprevention:trust-manage``    | if the player has manage trust level*    | ``false``     |
 
-**Note: Claim owners default to ``true`` for all trust level contexts*
+**Note: Claim owners default to ``true`` for all trust level contexts if they're in their own claim*
 
 ---
 
