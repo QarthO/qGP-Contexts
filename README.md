@@ -43,7 +43,7 @@ Requirements:
 
 ---
 
-# Example Permissions:
+# Example Setup:
 
 Want to prevent players from setting homes in claims they don't have atleast build trust in? You can do the following
 
