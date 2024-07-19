@@ -16,6 +16,7 @@ public class ClaimCalculator implements ContextCalculator<Player>
 {
     private static final String CLAIM_ID_KEY = "griefprevention:claim-id";
     private static final String IN_CLAIM_KEY = "griefprevention:in-claim";
+    private static final String IS_ADMIN_KEY = "griefprevention:is-admin-claim";
     private static final String IS_OWNER_KEY = "griefprevention:is-owner";
     private static final String TRUST_ACCESS_KEY = "griefprevention:trust-access";
     private static final String TRUST_BUILD_KEY = "griefprevention:trust-build";
@@ -42,8 +43,14 @@ public class ClaimCalculator implements ContextCalculator<Player>
 //        claim id of the claim
         contextConsumer.accept(CLAIM_ID_KEY, "" + currentClaim.getID());
 
+//        Admin claims don't have owners
+        if(currentClaim.isAdminClaim()){
+            contextConsumer.accept(IS_ADMIN_KEY, "true");
+            contextConsumer.accept(IS_OWNER_KEY, "false");
+        } else {
 //        if the player is the owner of the claim
-        contextConsumer.accept(IS_OWNER_KEY, "" + currentClaim.getOwnerID().equals(player.getUniqueId()));
+            contextConsumer.accept(IS_OWNER_KEY, "" + currentClaim.getOwnerID().equals(player.getUniqueId()));
+        }
 
 //        if the player has a trust level (owners default to true for all)
         contextConsumer.accept(TRUST_ACCESS_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Access));
@@ -60,6 +67,9 @@ public class ClaimCalculator implements ContextCalculator<Player>
 
         builder.add(IN_CLAIM_KEY, "true");
         builder.add(IN_CLAIM_KEY, "false");
+
+        builder.add(IS_ADMIN_KEY, "true");
+        builder.add(IS_ADMIN_KEY, "false");
 
         builder.add(TRUST_ACCESS_KEY, "true");
         builder.add(TRUST_ACCESS_KEY, "false");
