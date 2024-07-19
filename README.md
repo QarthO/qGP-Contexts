@@ -17,7 +17,9 @@
 
 ---
 
-Dependencies:
+Requirements:
+- Paper/Forks 1.21+ (Spigot not supported) 
+- Java 21+ 
 - [LuckPerms][luckperms-url]
 - [GriefPrevention][griefprevention-url]
 
