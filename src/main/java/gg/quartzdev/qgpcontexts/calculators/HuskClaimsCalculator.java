@@ -1,10 +1,5 @@
 package gg.quartzdev.qgpcontexts.calculators;
 
-import me.ryanhamshire.GriefPrevention.Claim;
-import me.ryanhamshire.GriefPrevention.ClaimPermission;
-import me.ryanhamshire.GriefPrevention.DataStore;
-import me.ryanhamshire.GriefPrevention.GriefPrevention;
-import me.ryanhamshire.GriefPrevention.PlayerData;
 import net.luckperms.api.context.ContextCalculator;
 import net.luckperms.api.context.ContextConsumer;
 import net.luckperms.api.context.ContextSet;
@@ -17,7 +12,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Optional;
 
-public class HuskClaimCalculator implements ContextCalculator<Player>
+public class HuskClaimsCalculator implements ContextCalculator<Player>
 {
     private static final String IN_CLAIM_KEY = "huskclaims:in-claim";
     private static final String IS_ADMIN_KEY = "huskclaims:in-admin-claim";
@@ -42,6 +37,8 @@ public class HuskClaimCalculator implements ContextCalculator<Player>
 
         net.william278.huskclaims.claim.Claim claim = currentClaim.get();
 
+        boolean isOwner = false;
+
 //        If in admin claim
         if(claim.isAdminClaim())
         {
@@ -54,12 +51,15 @@ public class HuskClaimCalculator implements ContextCalculator<Player>
             contextConsumer.accept(IS_ADMIN_KEY, "false");
 //        if owner of the claim
             if(claim.getOwner().isPresent())
-                contextConsumer.accept(IS_OWNER_KEY, "" + claim.getOwner().get().equals(player.getUniqueId()));
+            {
+                isOwner = claim.getOwner().get().equals(player.getUniqueId());
+                contextConsumer.accept(IS_OWNER_KEY, "" + isOwner);
+            }
         }
 
 //        sets false for all trust levels
         for(TrustLevel trustLevel : claimsAPI.getTrustLevels()) {
-            contextConsumer.accept(TRUST_LEVEL_PREFIX + trustLevel.getDisplayName().toLowerCase(), "false");
+            contextConsumer.accept(TRUST_LEVEL_PREFIX + trustLevel.getDisplayName().toLowerCase(), "" + isOwner);
         }
 
 //        sets true for the trust level the player has

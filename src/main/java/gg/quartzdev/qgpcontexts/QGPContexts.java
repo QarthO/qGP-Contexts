@@ -1,7 +1,7 @@
 package gg.quartzdev.qgpcontexts;
 
 import gg.quartzdev.qgpcontexts.calculators.GPClaimCalculator;
-import gg.quartzdev.qgpcontexts.calculators.HuskClaimCalculator;
+import gg.quartzdev.qgpcontexts.calculators.HuskClaimsCalculator;
 import net.kyori.adventure.text.Component;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
@@ -45,18 +45,19 @@ public final class QGPContexts extends JavaPlugin {
 //        Register the appropriate context calculator
         if(getServer().getPluginManager().getPlugin("GriefPrevention") != null)
         {
+            getComponentLogger().info(Component.text("Registering GriefPrevention contexts"));
             this.register(GPClaimCalculator::new);
         }
 
         if(getServer().getPluginManager().getPlugin("HuskClaims") != null)
         {
-            this.register(HuskClaimCalculator::new);
+            getComponentLogger().info(Component.text("Registering HuskClaims contexts"));
+            this.register(HuskClaimsCalculator::new);
         }
     }
 
     private void register(Supplier<ContextCalculator<Player>> calculatorSupplier)
     {
-        getComponentLogger().info(Component.text("Registering GriefPrevention contexts"));
         ContextCalculator<Player> calculator = calculatorSupplier.get();
         this.contextManager.registerCalculator(calculator);
         this.registeredCalculators.add(calculator);
