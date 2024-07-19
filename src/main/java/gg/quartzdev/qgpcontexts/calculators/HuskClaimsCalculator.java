@@ -17,7 +17,7 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
     private static final String IN_CLAIM_KEY = "huskclaims:in-claim";
     private static final String IS_ADMIN_KEY = "huskclaims:in-admin-claim";
     private static final String IS_OWNER_KEY = "huskclaims:is-owner";
-    private static final String TRUST_LEVEL_PREFIX = "huskclaims:trust-level-";
+    private static final String TRUST_LEVEL_PREFIX = "huskclaims:trust-";
 
     private final HuskClaimsAPI claimsAPI = HuskClaimsAPI.getInstance();
 
