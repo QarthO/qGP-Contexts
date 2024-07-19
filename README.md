@@ -18,8 +18,8 @@
 ---
 
 Dependencies:
-- LuckPerms
-- GriefPrevention
+- [LuckPerms][luckperms-url]
+- [GriefPrevention][griefprevention-url]
 
 ---
 
@@ -27,7 +27,7 @@ Dependencies:
 
 | Key                                 | Description                              | Example Value |
 |-------------------------------------|------------------------------------------|---------------|
-| ``griefprevention:claim-id``        | The id of the claim the player is in     | ``32``        |
+| ``griefprevention:claim-id``        | id of the claim the player is in         | ``32``        |
 | ``griefprevention:in-claim``        | if the player is in a claim              | ``true``      |
 | ``griefprevention:is-owner``        | if the player is the owner of the claim  | ``false``     |
 | ``griefprevention:trust-access``    | if the player has access trust level*    | ``true``      |
@@ -46,6 +46,8 @@ This plugin uses [bStats][bstats-url]. You can opt-out in the bStats config
 [![bStats for qTemplate Plugin][bstats-plugin-svg]][bstats-plugin-url]
 </div>
 
+[luckperms-url]: https://luckperms.net/
+[griefprevention-url]: https://modrinth.com/plugin/griefprevention
 
 [modrinth-shield]: https://img.shields.io/badge/Download-00AF5C?logo=modrinth&logoColor=white&style=for-the-badge
 
