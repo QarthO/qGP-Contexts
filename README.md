@@ -45,7 +45,7 @@ Dependencies:
 
 Want to prevent players from setting homes in claims they don't have atleast build trust in? You can do the following
 
-Setting ``essentials.sethome`` to ``false`` with the following contexts:
+Set ``essentials.sethome`` to ``false`` with the following contexts:
 - ``griefprevention:in-claim`` = ``true``
 - ``griefprevention:trust-build`` = ``false``
 
