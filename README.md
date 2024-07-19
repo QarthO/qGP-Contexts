@@ -31,7 +31,7 @@ Requirements:
 |-------------------------------------|------------------------------------------|---------------|
 | ``griefprevention:claim-id``        | id of the claim the player is in         | ``32``        |
 | ``griefprevention:in-claim``        | if the player is in a claim              | ``true``      |
-| ``griefprevention:is-admin-claim``  | if the claim is an admin claim           | ``false``     |
+| ``griefprevention:in-admin-claim``  | if the claim is an admin claim           | ``false``     |
 | ``griefprevention:is-owner``        | if the player is the owner of the claim  | ``false``     |
 | ``griefprevention:trust-access``    | if the player has access trust level*    | ``true``      |
 | ``griefprevention:trust-build``     | if the player has build trust level*     | ``true``      |

@@ -12,11 +12,11 @@ import net.luckperms.api.context.ImmutableContextSet;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-public class ClaimCalculator implements ContextCalculator<Player>
+public class GPClaimCalculator implements ContextCalculator<Player>
 {
     private static final String CLAIM_ID_KEY = "griefprevention:claim-id";
     private static final String IN_CLAIM_KEY = "griefprevention:in-claim";
-    private static final String IS_ADMIN_KEY = "griefprevention:is-admin-claim";
+    private static final String IN_ADMIN_KEY = "griefprevention:in-admin-claim";
     private static final String IS_OWNER_KEY = "griefprevention:is-owner";
     private static final String TRUST_ACCESS_KEY = "griefprevention:trust-access";
     private static final String TRUST_BUILD_KEY = "griefprevention:trust-build";
@@ -45,9 +45,10 @@ public class ClaimCalculator implements ContextCalculator<Player>
 
 //        Admin claims don't have owners
         if(currentClaim.isAdminClaim()){
-            contextConsumer.accept(IS_ADMIN_KEY, "true");
+            contextConsumer.accept(IN_ADMIN_KEY, "true");
             contextConsumer.accept(IS_OWNER_KEY, "false");
         } else {
+            contextConsumer.accept(IN_ADMIN_KEY, "false");
 //        if the player is the owner of the claim
             contextConsumer.accept(IS_OWNER_KEY, "" + currentClaim.getOwnerID().equals(player.getUniqueId()));
         }
@@ -68,8 +69,8 @@ public class ClaimCalculator implements ContextCalculator<Player>
         builder.add(IN_CLAIM_KEY, "true");
         builder.add(IN_CLAIM_KEY, "false");
 
-        builder.add(IS_ADMIN_KEY, "true");
-        builder.add(IS_ADMIN_KEY, "false");
+        builder.add(IN_ADMIN_KEY, "true");
+        builder.add(IN_ADMIN_KEY, "false");
 
         builder.add(TRUST_ACCESS_KEY, "true");
         builder.add(TRUST_ACCESS_KEY, "false");
