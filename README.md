@@ -14,14 +14,14 @@
 ---
 
 ### Adds GriefPrevention contexts to LuckPerms
-
+Now with [HuskClaims][huskclaims-url] support!
 ---
 
 Requirements:
 - Paper/Forks 1.21+ (Spigot not supported) 
 - Java 21+ 
 - [LuckPerms][luckperms-url]
-- [GriefPrevention][griefprevention-url]
+- [GriefPrevention][griefprevention-url] or [HuskClaims][huskclaims-url]
 
 ---
 
@@ -40,6 +40,13 @@ Requirements:
 | ``griefprevention:trust-manage``    | if the player has manage trust level*    | ``false``     |
 
 **Note: Claim owners default to ``true`` for all trust level contexts if they're in their own claim*
+
+For HuskClaims:
+- Replace ``griefprevention:`` with ``huskclaims:`` in the context key
+- HuskClaims doesn't have a ``claim-id`` key
+- Supports custom made trust levels too!
+
+If you need any help or support join the quartzdev.gg [discord][discord-url]!
 
 ---
 
@@ -64,6 +71,7 @@ This plugin uses [bStats][bstats-url]. You can opt-out in the bStats config
 [luckperms-url]: https://luckperms.net/
 [griefprevention-url]: https://modrinth.com/plugin/griefprevention
 [perms-example-img]: https://github.com/QarthO/qGP-Contexts/blob/main/img/gpcontexts%20perms.png?raw=true
+[huskclaims-url]: https://www.spigotmc.org/resources/huskclaims-1-17-1-21-modern-golden-shovel-land-claiming-fully-cross-server-compatible.114467/
 
 [modrinth-shield]: https://img.shields.io/badge/Download-00AF5C?logo=modrinth&logoColor=white&style=for-the-badge
 
