@@ -6,7 +6,10 @@ dependencies:
   server:
     GriefPrevention:
       load: BEFORE
-      required: true
+      required: false
     LuckPerms:
       load: BEFORE
       required: true
+    HuskClaims:
+      load: BEFORE
+      required: false
