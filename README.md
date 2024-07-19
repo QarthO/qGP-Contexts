@@ -21,17 +21,22 @@ Dependencies:
 - LuckPerms
 - GriefPrevention
 
+---
 
-| Context   | Description                                  | Example Value |
-| --------- | -------------------------------------------- |---------------|
-| ``griefprevention:claim-id`` | The claim ID of the claim the player is in | ``32``        |
-| ``griefprevention:in-claim`` | Whether the player is in a claim | ``true``      |
-| ``griefprevention:is-owner`` | Whether the player is the owner of the claim | ``false``     |
-| ``griefprevention:trust-access`` | Whether the player has access trust level | ``true``      |
-| ``griefprevention:trust-build`` | Whether the player has build trust level | ``true``      |
-| ``griefprevention:trust-edit`` | Whether the player has edit trust level | ``false``     |
-| ``griefprevention:trust-inventory`` | Whether the player has inventory trust level | ``false``     |
-| ``griefprevention:trust-manage`` | Whether the player has manage trust level | ``false``     |
+## Contexts
+
+| Key                                 | Description                              | Example Value |
+|-------------------------------------|------------------------------------------|---------------|
+| ``griefprevention:claim-id``        | The id of the claim the player is in     | ``32``        |
+| ``griefprevention:in-claim``        | if the player is in a claim              | ``true``      |
+| ``griefprevention:is-owner``        | if the player is the owner of the claim  | ``false``     |
+| ``griefprevention:trust-access``    | if the player has access trust level*    | ``true``      |
+| ``griefprevention:trust-build``     | if the player has build trust level*     | ``true``      |
+| ``griefprevention:trust-edit``      | if the player has edit trust level*      | ``false``     |
+| ``griefprevention:trust-inventory`` | if the player has inventory trust level* | ``false``     |
+| ``griefprevention:trust-manage``    | if the player has manage trust level*    | ``false``     |
+
+*Note: Claim owners default to ``true`` for all trust level contexts*
 
 ---
 
