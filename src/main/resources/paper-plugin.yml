@@ -1,0 +1,12 @@
+name: qGP-Contexts
+version: '${project.version}'
+main: gg.quartzdev.qgpcontexts.qGPContexts
+api-version: '1.21'
+dependencies:
+  server:
+    GriefPrevention:
+      load: BEFORE
+      required: true
+    LuckPerms:
+      load: BEFORE
+      required: true
