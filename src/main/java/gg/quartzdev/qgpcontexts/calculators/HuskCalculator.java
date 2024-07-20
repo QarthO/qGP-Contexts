@@ -12,12 +12,14 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Optional;
 
-public class HuskClaimsCalculator implements ContextCalculator<Player>
+public class HuskCalculator implements ContextCalculator<Player>
 {
-    private static final String IN_CLAIM_KEY = "huskclaims:in-claim";
-    private static final String IS_ADMIN_KEY = "huskclaims:in-admin-claim";
-    private static final String IS_OWNER_KEY = "huskclaims:is-owner";
-    private static final String TRUST_LEVEL_PREFIX = "huskclaims:trust-";
+    private static final String PLUGIN_PREFIX = "huskclaims:";
+
+    private static final String IN_CLAIM_KEY = PLUGIN_PREFIX + "in-claim";
+    private static final String IN_ADMIN_CLAIM_KEY = PLUGIN_PREFIX + "in-admin-claim";
+    private static final String IS_OWNER_KEY = PLUGIN_PREFIX + "is-owner";
+    private static final String TRUST_LEVEL_PREFIX = PLUGIN_PREFIX + "trust-";
 
     private final HuskClaimsAPI claimsAPI = HuskClaimsAPI.getInstance();
 
@@ -42,13 +44,13 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
 //        if in admin claim
         if(claim.isAdminClaim())
         {
-            contextConsumer.accept(IS_ADMIN_KEY, "true");
+            contextConsumer.accept(IN_ADMIN_CLAIM_KEY, "true");
 
 //            admin claims don't have owners
             contextConsumer.accept(IS_OWNER_KEY, "false");
         } else
         {
-            contextConsumer.accept(IS_ADMIN_KEY, "false");
+            contextConsumer.accept(IN_ADMIN_CLAIM_KEY, "false");
 //            if owner of the claim
             if(claim.getOwner().isPresent())
             {
@@ -80,8 +82,8 @@ public class HuskClaimsCalculator implements ContextCalculator<Player>
         builder.add(IN_CLAIM_KEY, "true");
         builder.add(IN_CLAIM_KEY, "false");
 
-        builder.add(IS_ADMIN_KEY, "true");
-        builder.add(IS_ADMIN_KEY, "false");
+        builder.add(IN_ADMIN_CLAIM_KEY, "true");
+        builder.add(IN_ADMIN_CLAIM_KEY, "false");
 
         builder.add(IS_OWNER_KEY, "true");
         builder.add(IS_OWNER_KEY, "false");

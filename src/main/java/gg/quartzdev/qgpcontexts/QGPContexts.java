@@ -1,7 +1,7 @@
 package gg.quartzdev.qgpcontexts;
 
-import gg.quartzdev.qgpcontexts.calculators.GPClaimCalculator;
-import gg.quartzdev.qgpcontexts.calculators.HuskClaimsCalculator;
+import gg.quartzdev.qgpcontexts.calculators.GPCalculator;
+import gg.quartzdev.qgpcontexts.calculators.HuskCalculator;
 import net.kyori.adventure.text.Component;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
@@ -50,13 +50,13 @@ public final class QGPContexts extends JavaPlugin
         if(getServer().getPluginManager().getPlugin("GriefPrevention") != null)
         {
             getComponentLogger().info(Component.text("Registering GriefPrevention contexts"));
-            this.register(GPClaimCalculator::new);
+            this.register(GPCalculator::new);
         }
 
         if(getServer().getPluginManager().getPlugin("HuskClaims") != null)
         {
             getComponentLogger().info(Component.text("Registering HuskClaims contexts"));
-            this.register(HuskClaimsCalculator::new);
+            this.register(HuskCalculator::new);
         }
     }
 

@@ -12,7 +12,7 @@ import net.luckperms.api.context.ImmutableContextSet;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-public class GPClaimCalculator implements ContextCalculator<Player>
+public class GPCalculator implements ContextCalculator<Player>
 {
     private static final String CLAIM_ID_KEY = "griefprevention:claim-id";
     private static final String IN_CLAIM_KEY = "griefprevention:in-claim";
@@ -90,5 +90,10 @@ public class GPClaimCalculator implements ContextCalculator<Player>
             builder.add(CLAIM_ID_KEY, "" + claim.getID());
         }
         return builder.build();
+    }
+
+    public void test()
+    {
+
     }
 }
