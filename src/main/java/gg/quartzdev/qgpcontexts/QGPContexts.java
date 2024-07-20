@@ -14,20 +14,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public final class QGPContexts extends JavaPlugin {
+public final class QGPContexts extends JavaPlugin
+{
 
-    private ContextManager contextManager;
     private final List<ContextCalculator<Player>> registeredCalculators = new ArrayList<>();
+    private ContextManager contextManager;
 
     @Override
-    public void onEnable() {
+    public void onEnable()
+    {
 
 //        bStats.org Metrics
         int pluginId = 22704;
         Metrics metrics = new Metrics(this, pluginId);
 
         LuckPerms luckPerms = getServer().getServicesManager().load(LuckPerms.class);
-        if (luckPerms == null)
+        if(luckPerms == null)
         {
             throw new IllegalStateException("LuckPerms API not loaded");
         }
@@ -36,12 +38,14 @@ public final class QGPContexts extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable()
+    {
         // Plugin shutdown logic
         unregisterAll();
     }
 
-    public void setup() {
+    public void setup()
+    {
 //        Register the appropriate context calculator
         if(getServer().getPluginManager().getPlugin("GriefPrevention") != null)
         {

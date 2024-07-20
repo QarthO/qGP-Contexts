@@ -44,10 +44,12 @@ public class GPClaimCalculator implements ContextCalculator<Player>
         contextConsumer.accept(CLAIM_ID_KEY, "" + currentClaim.getID());
 
 //        Admin claims don't have owners
-        if(currentClaim.isAdminClaim()){
+        if(currentClaim.isAdminClaim())
+        {
             contextConsumer.accept(IN_ADMIN_KEY, "true");
             contextConsumer.accept(IS_OWNER_KEY, "false");
-        } else {
+        } else
+        {
             contextConsumer.accept(IN_ADMIN_KEY, "false");
 //        if the player is the owner of the claim
             contextConsumer.accept(IS_OWNER_KEY, "" + currentClaim.getOwnerID().equals(player.getUniqueId()));
