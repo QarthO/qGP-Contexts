@@ -20,7 +20,7 @@ public class GPCalculator implements ContextCalculator<Player>
     private static final String IS_OWNER_KEY = "griefprevention:is-owner";
     private static final String TRUST_ACCESS_KEY = "griefprevention:trust-access";
     private static final String TRUST_BUILD_KEY = "griefprevention:trust-build";
-    private static final String TRUST_EDIT_KEY = "griefprevention:trust-edit";
+//    private static final String TRUST_EDIT_KEY = "griefprevention:trust-edit";
     private static final String TRUST_INVENTORY_KEY = "griefprevention:trust-inventory";
     private static final String TRUST_MANAGE_KEY = "griefprevention:trust-manage";
 
@@ -58,7 +58,7 @@ public class GPCalculator implements ContextCalculator<Player>
 //        if the player has a trust level (owners default to true for all)
         contextConsumer.accept(TRUST_ACCESS_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Access));
         contextConsumer.accept(TRUST_BUILD_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Build));
-        contextConsumer.accept(TRUST_EDIT_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Edit));
+//        contextConsumer.accept(TRUST_EDIT_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Edit));
         contextConsumer.accept(TRUST_INVENTORY_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Inventory));
         contextConsumer.accept(TRUST_MANAGE_KEY, "" + currentClaim.hasExplicitPermission(player.getUniqueId(), ClaimPermission.Manage));
     }
@@ -78,8 +78,8 @@ public class GPCalculator implements ContextCalculator<Player>
         builder.add(TRUST_ACCESS_KEY, "false");
         builder.add(TRUST_BUILD_KEY, "true");
         builder.add(TRUST_BUILD_KEY, "false");
-        builder.add(TRUST_EDIT_KEY, "true");
-        builder.add(TRUST_EDIT_KEY, "false");
+//        builder.add(TRUST_EDIT_KEY, "true");
+//        builder.add(TRUST_EDIT_KEY, "false");
         builder.add(TRUST_INVENTORY_KEY, "true");
         builder.add(TRUST_INVENTORY_KEY, "false");
         builder.add(TRUST_MANAGE_KEY, "true");
