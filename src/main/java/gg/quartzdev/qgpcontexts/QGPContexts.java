@@ -49,13 +49,13 @@ public final class QGPContexts extends JavaPlugin
 //        Register the appropriate context calculator
         if(getServer().getPluginManager().getPlugin("GriefPrevention") != null)
         {
-            getComponentLogger().info(Component.text("Registering GriefPrevention contexts"));
+//            getComponentLogger().info(Component.text("Registering GriefPrevention contexts"));
             this.register(GPCalculator::new);
         }
 
         if(getServer().getPluginManager().getPlugin("HuskClaims") != null)
         {
-            getComponentLogger().info(Component.text("Registering HuskClaims contexts"));
+//            getComponentLogger().info(Component.text("Registering HuskClaims contexts"));
             this.register(HuskCalculator::new);
         }
     }

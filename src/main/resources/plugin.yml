@@ -1,0 +1,8 @@
+name: qGP-Contexts
+version: '${project.version}'
+main: gg.quartzdev.qgpcontexts.QGPContexts
+description: Addon to addGriefPrevention Contexts to LuckPerms permissions
+author: QarthO
+website: https://quartzdev.gg/
+api-version: '1.16'
+depend: [LuckPerms, GriefPrevention]
