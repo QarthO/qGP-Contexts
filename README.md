@@ -56,11 +56,8 @@ If you need any help or support join the quartzdev.gg [discord][discord-url]!
 ## Example Setup:
 
 Want to prevent players from setting homes in claims they don't have atleast build trust in? You can do the following
-
-Set ``essentials.sethome`` to ``false`` with the following contexts:
-
-- ``griefprevention:in-claim`` = ``true``
-- ``griefprevention:trust-build`` = ``false``
+- Set ``essentials.sethome`` to ``true`` as you would normally.
+- Set ``essentials.sethome`` to ``false`` with context ``griefprevention:trust-build`` to ``false``
 
 ![GP Contexts Permissions][perms-example-img]
 
@@ -76,7 +73,7 @@ This plugin uses [bStats][bstats-url]. You can opt-out in the bStats config
 
 [griefprevention-url]: https://modrinth.com/plugin/griefprevention
 
-[perms-example-img]: https://github.com/QarthO/qGP-Contexts/blob/main/img/gpcontexts%20perms.png?raw=true
+[perms-example-img]: https://github.com/QarthO/qGP-Contexts/blob/main/img/luckperms-example.png?raw=true
 
 [huskclaims-url]: https://www.spigotmc.org/resources/huskclaims-1-17-1-21-modern-golden-shovel-land-claiming-fully-cross-server-compatible.114467/
 
